@@ -1,0 +1,22 @@
+{
+    "name": "static-abilities",
+    "version": "0.0.1",
+    "authors": [
+        "Vítor Avelino <contact@vitoravelino.me>"
+    ],
+    "description": "Static abilities generator for ACL based authorization",
+    "license": "MIT",
+    "homepage": "https://github.com/vitoravelino/static-abilities",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "test",
+        "tests"
+    ],
+    "keywords": [
+        "authorization",
+        "abilities",
+        "acl",
+        "role",
+    ],
+}
