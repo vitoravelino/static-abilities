@@ -1,3 +1,8 @@
+/** static-abilities - v0.0.1 - 2015-02-11
+* Copyright (c) 2015 Vítor Avelino;
+* Licensed MIT 
+*/
+
 (function (root) {
     var toString = Object.prototype.toString;
 

@@ -171,14 +171,14 @@ describe('Abilities', function() {
             });
 
             define('role2', function(can, extend) {
-                extend('role1')
+                extend('role1');
 
                 can('permission2');
             });
 
             roles = Abilities.toJSON();
 
-            expect(roles['role2']).toEqual(['permission1', 'permission2']);
+            expect(roles.role2).toEqual(['permission1', 'permission2']);
         });
 
         it('should append the role`s permissions to the one defined (array)', function() {
@@ -198,7 +198,7 @@ describe('Abilities', function() {
 
             roles = Abilities.toJSON();
 
-            expect(roles['role3']).toEqual(['permission1', 'permission2']);
+            expect(roles.role3).toEqual(['permission1', 'permission2']);
         });
 
         it('should not duplicate permissions when existent roles conflicts', function() {
@@ -218,13 +218,13 @@ describe('Abilities', function() {
 
             roles = Abilities.toJSON();
 
-            expect(roles['role3']).toEqual(['permission1']);
+            expect(roles.role3).toEqual(['permission1']);
         });
 
         it('should throw an error if role supposed to be extended does not exist', function() {
             var extend = function() {
                 define('role1', function(can, extend) {
-                    extend('role')
+                    extend('role');
                 });
             };
 
@@ -239,7 +239,7 @@ describe('Abilities', function() {
             });
 
             define('role2', function(can, extend) {
-                extend('role1')
+                extend('role1');
 
                 can('permission2');
             });

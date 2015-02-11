@@ -17,6 +17,6 @@
         "authorization",
         "abilities",
         "acl",
-        "role",
-    ],
+        "role"
+    ]
 }

@@ -4,20 +4,22 @@
     var define = Abilities.define.bind(Abilities);
 
     define('reader', function(can) {
-        can('read', 'blacklist');
-        can('read', 'campaigns');
-    });
-
-    define('blacklist_editor', function(can, extend) {
-        extend('reader');
-
-        can('manage', 'blacklist'); // alias to ['read', 'edit', 'delete']
+        can('read', 'resource1');
+        can('read', 'resource2');
     });
 
     define('editor', function(can, extend) {
-        extend('blacklist_editor');
+        extend('reader');
 
-        can('manage', 'campaigns');
+        can('manage', 'resource2'); // alias to ['read', 'edit', 'delete']
     });
+
+    define('admin', function(can, extend) {
+        extend('editor');
+
+        can('manage', 'resource3');
+    });
+
+    console.log(Abilities.toJSON());
 
 }());
