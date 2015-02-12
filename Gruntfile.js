@@ -13,18 +13,7 @@ module.exports = function (grunt) {
                   '* Copyright (c) <%= grunt.template.today(\'yyyy\') %> <%= pkg.author %>;\n' +
                   '* Licensed <%= pkg.license %> \n*/\n\n',
 
-        // uglify
-        uglify: {
-            options: {
-                banner: '<%= banner %>'
-            },
-            dist: {
-                files: {
-                  'dist/static-abilities.min.js': ['src/static-abilities.js']
-                }
-            }
-        },
-
+        // concat
         concat: {
             options: {
                 banner: '<%= banner %>'
@@ -37,6 +26,11 @@ module.exports = function (grunt) {
             }
         },
 
+        // coveralls
+        coveralls: {
+            src: 'bin/coverage/lcov.info'
+        },
+
         // jasmine + instabul
         jasmine: {
             src: ['src/*.js'],
@@ -45,7 +39,12 @@ module.exports = function (grunt) {
                 template: require('grunt-template-jasmine-istanbul'),
                 templateOptions: {
                     coverage: 'bin/coverage/coverage.json',
-                    report: 'bin/coverage',
+                    report: {
+                        type: 'lcov',
+                        options: {
+                            dir: 'bin/coverage'
+                        }
+                    },
                     thresholds: {
                         lines: 75,
                         statements: 75,
@@ -61,6 +60,18 @@ module.exports = function (grunt) {
             files: ['src/static-abilities.js']
         },
 
+        // uglify
+        uglify: {
+            options: {
+                banner: '<%= banner %>'
+            },
+            dist: {
+                files: {
+                  'dist/static-abilities.min.js': ['src/static-abilities.js']
+                }
+            }
+        },
+
         // watch
         watch: {
             files: ['src/**/*.js', 'test/**/*.js'],
@@ -69,5 +80,5 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('dist', ['jshint', 'jasmine', 'concat', 'uglify']);
-    grunt.registerTask('ci', ['jshint', 'jasmine']);
+    grunt.registerTask('ci', ['jshint', 'jasmine', 'coveralls']);
 };
