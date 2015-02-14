@@ -35,7 +35,7 @@
      *
      * <code>can('permission', 'resource')</code>
      *
-     * it will assciate a permission that it's gonna be build like `permission_resource`
+     * it will associate a permission that it's gonna be build like `permission_resource`
      * to the role.
      *
      * This is an internal function that will be called with the context as `role` string.
@@ -172,7 +172,7 @@
 
         /**
          * Returns the `roles` variable that it's an object that reflects a map of
-         * roles and its permissions. With that you can now manage your ACL
+         * roles and its permissions. With that you can now manage your role
          * based authorization system.
          *
          * @method toJSON
