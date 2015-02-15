@@ -68,7 +68,7 @@ Abilities.define('role', function(can, extend) {
 });
 ```
 
-### Abilities.alias
+### Abilities.alias(name, permissions)
 
 Creates an alias to permission(s).
          
@@ -100,7 +100,7 @@ Abilities.define('role', function(can, extend) {
 **NOTE:** A built-in alias `manage` is defined for `read`, `edit` and `delete`.
 
 
-### Abilities.toJSON
+### Abilities.toJSON()
 
 Returns the JSON map reference for what you've written.
 
@@ -125,7 +125,7 @@ The `Abilities.toJSON()` call would return:
 
 ```
 
-### Abilities.flush
+### Abilities.flush()
 
 It flushes all the previously defined roles.
 
