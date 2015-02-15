@@ -1,10 +1,10 @@
 {
     "name": "static-abilities",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "authors": [
         "Vítor Avelino <contact@vitoravelino.me>"
     ],
-    "description": "Static abilities generator for ACL based authorization",
+    "description": "Static abilities generator for role based authorization",
     "license": "MIT",
     "homepage": "https://github.com/vitoravelino/static-abilities",
     "ignore": [
